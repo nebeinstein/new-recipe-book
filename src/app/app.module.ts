@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { RecipesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
@@ -32,7 +31,6 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
         HttpModule,
         AppRoutingModule,
         AuthModule,
-        RecipesModule,
         SharedModule,
         ShoppingListModule
     ],
