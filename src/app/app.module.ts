@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,8 +13,6 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
-
-import { DropdownDirective } from './shared/dropdown.directive';
 
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
@@ -30,8 +29,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
         ShoppingEditComponent,
         ShoppingListComponent,
         SigninComponent,
-        SignupComponent,
-        DropdownDirective
+        SignupComponent
     ],
     // other modules this module uses
     imports: [
@@ -39,7 +37,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        RecipesModule
+        RecipesModule,
+        SharedModule
     ],
     // which services the module uses
     providers: [
