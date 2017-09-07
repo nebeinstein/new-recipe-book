@@ -10,6 +10,7 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
@@ -23,6 +24,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     declarations: [
         AppComponent,
         HeaderComponent,
+        HomeComponent
     ],
     // other modules this module uses
     imports: [
