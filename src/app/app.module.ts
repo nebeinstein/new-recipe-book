@@ -1,18 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RecipesModule } from './recipes/recipes.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -26,36 +21,35 @@ import { DataStorageService } from './shared/data-storage.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 
+// The module basically wraps the app and defines what features are used in it
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeDetailComponent,
-    RecipeEditComponent,
-    RecipeItemComponent,
-    RecipeListComponent,
-    RecipeStartComponent,
-    ShoppingEditComponent,
-    ShoppingListComponent,
-    SigninComponent,
-    SignupComponent,
-    DropdownDirective
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    AuthGuard,
-    AuthService,
-    DataStorageService,
-    RecipeService,
-    ShoppingListService
-  ],
-  bootstrap: [AppComponent]
+    // Components, directives, pipes this module uses
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ShoppingEditComponent,
+        ShoppingListComponent,
+        SigninComponent,
+        SignupComponent,
+        DropdownDirective
+    ],
+    // other modules this module uses
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule,
+        RecipesModule
+    ],
+    // which services the module uses
+    providers: [
+        AuthGuard,
+        AuthService,
+        DataStorageService,
+        RecipeService,
+        ShoppingListService
+    ],
+    // defines the root component 
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
