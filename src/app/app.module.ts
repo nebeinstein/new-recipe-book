@@ -10,6 +10,7 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 import { AppComponent } from './app.component';
 
+// The module basically wraps the app and defines what features are used in it
 @NgModule({
     declarations: [AppComponent],
     imports: [
