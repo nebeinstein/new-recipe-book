@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
 import { AuthInterceptor } from '../shared/auth.interceptor';
+import { LoggingInterceptor } from '../shared/logging.interceptor';
 
 import { AuthService } from '../auth/auth.service';
 import { DataStorageService } from '../shared/data-storage.service';
@@ -32,11 +33,8 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
         DataStorageService,
         RecipeService,
         ShoppingListService,
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: AuthInterceptor,
-            multi: true
-        }
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true }
     ]
 })
 export class CoreModule { }
